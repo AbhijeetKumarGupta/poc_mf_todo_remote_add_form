@@ -1,12 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 import AddForm from './module/AddForm';
 
 function App() {
   return (
-    <div className="App">
-      <AddForm/>
-    </div>
+    <AddForm/>
   );
 }
 

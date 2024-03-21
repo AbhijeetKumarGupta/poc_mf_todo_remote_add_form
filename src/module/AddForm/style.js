@@ -7,7 +7,7 @@ export const AddFormContainer = styled.form`
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 50%;
+    width: 100%;
     color: white;
     gap: 15px;
 `
