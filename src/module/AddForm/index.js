@@ -2,15 +2,18 @@ import React from 'react';
 import { useState } from "react";
 import { AddButton, AddFormContainer, ErrorContainer, InputFieldWrapper, TodoInputField } from "./style";
 
-function AddForm() {
+function AddForm(props) {
+    const { handleAdd } = props
     const [todoTitle, setTodoTitle] = useState("");
     const [error, setError] = useState("");
 
     const handleChange = (e) => {
         setTodoTitle(e?.target?.value)
     }
-    const handleAdd = (e) => {
 
+    const handleAddClick = (e) => {
+      handleAdd(e, todoTitle)
+      setTodoTitle("")
     }
 
     return (
@@ -23,15 +26,15 @@ function AddForm() {
               placeholder="Enter Text Here"
               onChange={handleChange}
             />
-            {error && 
-            <ErrorContainer>
-              {
-              error
-              }
-            </ErrorContainer>}
+            {
+              error && 
+              <ErrorContainer>
+                {error}
+              </ErrorContainer>
+            }
           </InputFieldWrapper>
           <AddButton 
-            onClick={handleAdd}
+            onClick={handleAddClick}
           >
             Add
           </AddButton>
