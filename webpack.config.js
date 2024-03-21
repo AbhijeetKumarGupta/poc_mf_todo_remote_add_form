@@ -34,7 +34,7 @@ module.exports = {
       name: 'addForm',
       filename: 'remoteEntry.js',
       exposes: {
-        './index': './src/App',
+        './addForm': './src/module/AddForm',
       },
       shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
     }),
