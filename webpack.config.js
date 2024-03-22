@@ -29,12 +29,11 @@ module.exports = {
     ],
   },
   plugins: [
-    // To learn more about the usage of this plugin, please visit https://webpack.js.org/plugins/module-federation-plugin/
     new ModuleFederationPlugin({
       name: 'addForm',
       filename: 'remoteEntry.js',
       exposes: {
-        './addForm': './src/module/AddForm',
+        './index': './src/module/AddForm',
       },
       shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
     }),
