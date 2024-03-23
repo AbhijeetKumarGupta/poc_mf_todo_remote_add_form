@@ -3,16 +3,22 @@ import { useState } from "react";
 import { AddButton, AddFormContainer, ErrorContainer, InputFieldWrapper, TodoInputField } from "./style";
 
 function AddForm(props) {
-    const { handleAdd } = props
+    const { error, handleAdd } = props
     const [todoTitle, setTodoTitle] = useState("");
-    const [error, setError] = useState("");
 
     const handleChange = (e) => {
         setTodoTitle(e?.target?.value)
     }
 
     const handleAddClick = (e) => {
-      handleAdd(e, todoTitle)
+      const newData = {
+        userId: new Date().getTime(),
+        id: new Date().getTime(),
+        title: todoTitle,
+        completed: false,
+        isDummy: true
+      }
+      handleAdd(e, newData)
       setTodoTitle("")
     }
 
